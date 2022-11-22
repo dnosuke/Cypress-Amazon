@@ -24,5 +24,5 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 beforeEach(() => {
-  cy.visit("https://itera-qa.azurewebsites.net/Login")
+  cy.visit("https://www.amazon.com.br/ref=nav_logo")
 });
