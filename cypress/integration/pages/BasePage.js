@@ -25,6 +25,11 @@ export default class BasePage {
     cy.get(element).clear();
   }
 
+  hoverElement(element, popover) {
+    cy.get(element).trigger('mouseover')
+    cy.get(popover).should('be.visible') 
+  }
+
   tempo(tempo) {
     cy.wait(tempo);
   }
@@ -35,6 +40,10 @@ export default class BasePage {
 
   validarText(element, text) {
     cy.get(element).should("contain", text);
+  }
+
+  invalidarText(element, text) {
+    cy.get(element).should("not.contain", text);
   }
 
   validarQuantItemNaLista(element, quant) {

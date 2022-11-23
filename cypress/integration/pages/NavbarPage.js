@@ -14,11 +14,15 @@ let campoCepCadastrado = '#glow-ingress-line2'
 // MAPEAMENTO CAMPO BUSCA
 
 let inputCampoBusca = '#twotabsearchtextbox'
-let btnFiltroBusca = '#nav-search-dropdown-card > div > div'
+let btnFiltroSamsung = '#p_89\\/SAMSUNG > .a-list-item > .a-link-normal > .a-size-base'
+let btnFiltroWindows11 = '#p_n_operating_system_browse-bin\\/23724703011 > .a-list-item > .a-link-normal > .a-size-base'
 let btnBuscarLupa = '#nav-search-submit-button'
+let campoTextoResultadoBusca = '#search > span > div > h1 > div > div.sg-col-14-of-20.sg-col.s-breadcrumb.sg-col-10-of-16.sg-col-6-of-12 > div > div > span.a-color-state.a-text-bold'
+let msgErroNenhumProdutoEncontrado = '.s-no-outline > :nth-child(1) > :nth-child(1)'
+let resultadosBuscaUtilizandoFiltro = '.s-main-slot'
 
 
-// MAPEAMENTO CARRINHP 
+// MAPEAMENTO CARRINHO
 
 let btnCarrinho = '#nav-cart'
 let msgCarrinhoVazio = '#sc-active-cart > div > div > div > h1'
@@ -31,6 +35,8 @@ let campoSubtotalValorProdutosCarrinho = '#sc-subtotal-amount-activecart > span'
 let btnExcluirProdutoCarrinho = '#sc-active-C8ca82ced-c696-497f-aaa6-aa5ad810d7dc > div.sc-list-item-content > div > div.a-column.a-span10 > div > div > div.a-fixed-left-grid-col.sc-product-details.a-col-right > div.a-row.sc-action-links > span.a-size-small.sc-action-delete > span > input'
 let btnFinalizarPedidoCarrinho = '#sc-buy-box-ptc-button > span > input'
 let avisoMsgErroAdicionarItensCarrinho = '#a-popover-content-1'
+
+
 
 
 
@@ -74,6 +80,26 @@ export default class NavbarPage {
 
   clicarBtnFiltroCampoBusca() {
     BASE_PAGE.click(btnFiltroBusca)
+  }
+
+  clicarCheckBoxSamsung() {
+    BASE_PAGE.click(btnFiltroSamsung)
+  }
+
+  clicarCheckBoxWindows11() {
+    BASE_PAGE.click(btnFiltroWindows11)
+  }
+
+  validarItemBuscado(text) {
+    BASE_PAGE.validarText(campoTextoResultadoBusca, text)
+  }
+
+  validarMsgErroProdutoNaoEncontrado() {
+    BASE_PAGE.validarText(msgErroNenhumProdutoEncontrado, "Nenhum resultado para ")
+  }
+
+  validarResultadosBuscaComFiltros(text) {
+    BASE_PAGE.invalidarText(resultadosBuscaUtilizandoFiltro, text)
   }
 
   // FUNCIONALIDADE CARRINHO

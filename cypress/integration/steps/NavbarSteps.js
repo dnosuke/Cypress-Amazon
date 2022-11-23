@@ -9,6 +9,8 @@ const NAVBAR_PAGE = new NavBar();
 
 context("NavBar", () => {
 
+  //     ********FUNCIONALIDADE CEP**********
+
   it('Validar cadastrar cep valido', () => {
 
       NAVBAR_PAGE.clicarBtnAdicionarCep();
@@ -32,5 +34,78 @@ context("NavBar", () => {
 
     NAVBAR_PAGE.validarCampoErroCepInvalido("Insira um CEP válido");
   });
+
+  it('Validar erro ao confimar cep com campos vazios', () => {
+
+    NAVBAR_PAGE.clicarBtnAdicionarCep();
+    NAVBAR_PAGE.clicarBtnConfirmarCep();
+
+              // ASSERTS
+
+    NAVBAR_PAGE.validarCampoErroCepInvalido("Insira um CEP válido");
+  })
+
+  it('Validar Erro ao cadastrar apenas o campo esquedo do cep', () => {
+
+    NAVBAR_PAGE.clicarBtnAdicionarCep();
+    NAVBAR_PAGE.preencherCampoEsquerdoCep("AAAAA");
+    NAVBAR_PAGE.clicarBtnConfirmarCep();
+
+          // ASSERTS
+
+    NAVBAR_PAGE.validarCampoErroCepInvalido("Insira um CEP válido");
+  });
+
+  it('Validar Erro ao cadastrar apenas o campo direito do cep', () => {
+
+    NAVBAR_PAGE.clicarBtnAdicionarCep();
+    NAVBAR_PAGE.preencherCampoDireitoCep("ZZZ");
+    NAVBAR_PAGE.clicarBtnConfirmarCep();
+
+          // ASSERTS
+
+    NAVBAR_PAGE.validarCampoErroCepInvalido("Insira um CEP válido");
+  });
+  
+
+
+    //    ********FUNCIONALIDADE BUSCA**********
+
+    it('Validar Buscar item Existente', () => {
+      
+      NAVBAR_PAGE.preencherCampoDeBusca('bombom raffaello')
+      NAVBAR_PAGE.clicarBtnBuscarLupa()
+
+          // ASSERTS
+
+      NAVBAR_PAGE.validarItemBuscado('bombom raffaello')
+    })
+ 
+    it('Validar Mensagem erro quando busco produto invalido', () => {
+
+      NAVBAR_PAGE.preencherCampoDeBusca('🤣🤣🤣🤣')
+      NAVBAR_PAGE.clicarBtnBuscarLupa()
+
+          // ASSERTS
+
+      NAVBAR_PAGE.validarMsgErroProdutoNaoEncontrado()
+    })
+
+    it('Validar Busca usando filtros', () => {
+
+        NAVBAR_PAGE.preencherCampoDeBusca('notebook')
+        NAVBAR_PAGE.clicarBtnBuscarLupa()
+        NAVBAR_PAGE.clicarCheckBoxSamsung()
+        NAVBAR_PAGE.clicarCheckBoxWindows11()
+
+            // ASSERTS
+
+        NAVBAR_PAGE.validarResultadosBuscaComFiltros('Windows 10')
+    })
+
+
+    
+    //     ********FUNCIONALIDADE CARRINHO*********
+
 
 });
