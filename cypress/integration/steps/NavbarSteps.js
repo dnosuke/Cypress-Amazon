@@ -9,7 +9,9 @@ context("NavBar", () => {
   //     ********FUNCIONALIDADE CEP**********
 
   it('Validar cadastrar cep valido', () => {
-
+    cy.allure()
+    .feature("Localizacao")
+    .story("Dados válidos");
       NAVBAR_PAGE.clicarBtnAdicionarCep();
       NAVBAR_PAGE.preencherCampoEsquerdoCep("30710");
       NAVBAR_PAGE.preencherCampoDireitoCep("230");
@@ -20,7 +22,9 @@ context("NavBar", () => {
   })
 
   it('Validar Erro ao cadastrar cep invalido', () => {
-
+    cy.allure()
+    .feature("Localizacao")
+    .story("Dados inválidos");
     NAVBAR_PAGE.clicarBtnAdicionarCep();
     NAVBAR_PAGE.preencherCampoEsquerdoCep("AAAAA");
     NAVBAR_PAGE.preencherCampoDireitoCep("ZZZ");
@@ -32,7 +36,9 @@ context("NavBar", () => {
   });
 
   it('Validar erro ao confimar cep com campos vazios', () => {
-
+    cy.allure()
+    .feature("Localizacao")
+    .story("Dados inválidos");
     NAVBAR_PAGE.clicarBtnAdicionarCep();
     NAVBAR_PAGE.clicarBtnConfirmarCep();
 
@@ -42,7 +48,9 @@ context("NavBar", () => {
   })
 
   it('Validar Erro ao cadastrar apenas o campo esquedo do cep', () => {
-
+    cy.allure()
+    .feature("Localizacao")
+    .story("Dados inválidos");
     NAVBAR_PAGE.clicarBtnAdicionarCep();
     NAVBAR_PAGE.preencherCampoEsquerdoCep("AAAAA");
     NAVBAR_PAGE.clicarBtnConfirmarCep();
@@ -53,7 +61,9 @@ context("NavBar", () => {
   });
 
   it('Validar Erro ao cadastrar apenas o campo direito do cep', () => {
-
+    cy.allure()
+    .feature("Localizacao")
+    .story("Dados inválidos");
     NAVBAR_PAGE.clicarBtnAdicionarCep();
     NAVBAR_PAGE.preencherCampoDireitoCep("ZZZ");
     NAVBAR_PAGE.clicarBtnConfirmarCep();
@@ -68,7 +78,9 @@ context("NavBar", () => {
     //    ********FUNCIONALIDADE BUSCA**********
 
     it('Validar Buscar item Existente', () => {
-      
+      cy.allure()
+    .feature("Busca")
+    .story("Dados válidos");
       NAVBAR_PAGE.preencherCampoDeBusca('bombom raffaello')
       NAVBAR_PAGE.clicarBtnBuscarLupa()
 
@@ -78,7 +90,9 @@ context("NavBar", () => {
     })
  
     it('Validar Mensagem erro quando busco produto invalido', () => {
-
+      cy.allure()
+    .feature("Busca")
+    .story("Dados inválidos");
       NAVBAR_PAGE.preencherCampoDeBusca('🤣🤣🤣🤣')
       NAVBAR_PAGE.clicarBtnBuscarLupa()
 
@@ -88,7 +102,9 @@ context("NavBar", () => {
     })
 
     it('Validar Busca usando filtros', () => {
-
+      cy.allure()
+      .feature("Busca")
+      .story("Dados válidos");
         NAVBAR_PAGE.preencherCampoDeBusca('notebook')
         NAVBAR_PAGE.clicarBtnBuscarLupa()
         NAVBAR_PAGE.clicarCheckBoxSamsung()
@@ -104,7 +120,9 @@ context("NavBar", () => {
         // ********FUNCIONALIDADE CARRINHO*********
 
     it('Validar adicionar produtos ao carrinho', () => {
-
+      cy.allure()
+    .feature("Carrinho")
+    .story("Dados válidos");
       NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
       NAVBAR_PAGE.clicarBtnBuscarLupa()
       NAVBAR_PAGE.clicarNoProduto()
@@ -118,7 +136,9 @@ context("NavBar", () => {
 
 
     it('Validar aumentar a quantidade desejada do produto adicionado ao carrinho', () => {
-
+      cy.allure()
+    .feature("Carrinho")
+    .story("Dados válidos");
       NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
       NAVBAR_PAGE.clicarBtnBuscarLupa()
       NAVBAR_PAGE.clicarNoProduto()
@@ -133,7 +153,9 @@ context("NavBar", () => {
     })
 
     it('Validar redirecionamento para pagina de login ao finalizar pedido sem estar logado', () => {
-
+      cy.allure()
+      .feature("Carrinho")
+      .story("Dados válidos");
         NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
         NAVBAR_PAGE.clicarBtnBuscarLupa()
         NAVBAR_PAGE.clicarNoProduto()
