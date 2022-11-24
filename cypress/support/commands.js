@@ -25,6 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 beforeEach(() => {
   cy.clearCookies()
-  cy.exec('npm cache clear --force')
+  //cy.exec('npm cache clear --force')
   cy.visit("https://www.amazon.com.br/")
 });
