@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Nov 22 20:56:12 GMT-03:00 2022","Tue Nov 22 20:56:16 GMT-03:00 2022","4330","","NavBar","","","","Validar Erro ao cadastrar cep invalido",""
+"passed","Wed Nov 23 22:31:53 GMT-03:00 2022","Wed Nov 23 22:32:04 GMT-03:00 2022","10699","","Login","","","","Validar Mensagem Error ao Fazer login com Email Invalido",""
+"passed","Tue Nov 22 20:55:50 GMT-03:00 2022","Tue Nov 22 20:56:11 GMT-03:00 2022","21908","","NavBar","","","","Validar cadastrar cep valido",""
+"passed","Wed Nov 23 22:32:35 GMT-03:00 2022","Wed Nov 23 22:32:45 GMT-03:00 2022","10235","","Login","","","","Validar mensagem de error ao tentar criar conta confirmando senha diferente da senha inserida",""
+"passed","Wed Nov 23 22:32:15 GMT-03:00 2022","Wed Nov 23 22:32:25 GMT-03:00 2022","10184","","Login","","","","Validar mensagem de erro ao tentar criar conta com email ja cadastrado",""
+"passed","Wed Nov 23 22:32:04 GMT-03:00 2022","Wed Nov 23 22:32:15 GMT-03:00 2022","11057","","Login","","","","Validar Fazer login com dados valido",""
+"passed","Wed Nov 23 22:32:25 GMT-03:00 2022","Wed Nov 23 22:32:35 GMT-03:00 2022","9586","","Login","","","","Validar mensagem de erro ao tentar criar conta com senha menor que 6 caracteres",""

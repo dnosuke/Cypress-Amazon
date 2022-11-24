@@ -24,5 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 beforeEach(() => {
-  cy.visit("https://www.amazon.com.br/ref=nav_logo")
+  cy.clearCookies()
+  cy.exec('npm cache clear --force')
+  cy.visit("https://www.amazon.com.br/")
 });
