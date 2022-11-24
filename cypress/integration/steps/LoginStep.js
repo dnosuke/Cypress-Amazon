@@ -6,7 +6,10 @@ const LOGIN_PAGE = new LoginPage();
 context("Login", () => {
 
   it('Validar Fazer login com dados valido', () => {
-    
+    cy.allure()
+      .epic("Login")
+      .feature("login com usuário cadastrado")
+      .story("Dados válidos");
     LOGIN_PAGE.hoverDropDownClicarEmLogin()
     LOGIN_PAGE.preencherCampoUserName("batot60946@sunetoa.com")
     LOGIN_PAGE.clicarBtnContinuarLogin()
@@ -19,7 +22,9 @@ context("Login", () => {
   })
 
   it('Validar Mensagem Error ao Fazer login com Email Invalido', () => {
-    
+    cy.allure()
+      .feature("login")
+      .story("Dados inválidos");
     LOGIN_PAGE.hoverDropDownClicarEmLogin()
     LOGIN_PAGE.preencherCampoUserName("batotdfasd60946@sunetoa.com")
     LOGIN_PAGE.clicarBtnContinuarLogin()
@@ -29,8 +34,11 @@ context("Login", () => {
     LOGIN_PAGE.validarMsgErrorEmailNaoPossuiConta()
   })
 
-  it('Validar Fazer login com dados valido', () => {
-    
+  it('Validar Fazer login com senha incorreta', () => {
+    cy.allure()
+      .epic("Contato")
+      .feature("adicionar contato")
+      .story("Dados inválidos");
     LOGIN_PAGE.hoverDropDownClicarEmLogin()
     LOGIN_PAGE.preencherCampoUserName("batot60946@sunetoa.com")
     LOGIN_PAGE.clicarBtnContinuarLogin()
@@ -43,7 +51,10 @@ context("Login", () => {
   })
 
   it('Validar mensagem de erro ao tentar criar conta com email ja cadastrado', () => {
-
+    cy.allure()
+      .epic("Contato")
+      .feature("adicionar contato")
+      .story("Dados inválidos");
     LOGIN_PAGE.hoverDropDownClicarEmComeceAqui()
     LOGIN_PAGE.preencherCampoNome('Teste')
     LOGIN_PAGE.preencherCampoEmail('batot60946@sunetoa.com')
@@ -57,7 +68,10 @@ context("Login", () => {
   })
 
   it('Validar mensagem de erro ao tentar criar conta com senha menor que 6 caracteres', () => {
-
+    cy.allure()
+      .epic("Contato")
+      .feature("senha menor que 6 digitos")
+      .story("Dados inválidos");
     LOGIN_PAGE.hoverDropDownClicarEmComeceAqui()
     LOGIN_PAGE.preencherCampoNome('Teste')
     LOGIN_PAGE.preencherCampoEmail('batotadf60946@sunetoa.com')
@@ -71,7 +85,10 @@ context("Login", () => {
   })
 
   it('Validar mensagem de error ao tentar criar conta confirmando senha diferente da senha inserida', () =>{
-
+    cy.allure()
+      .epic("Contato")
+      .feature("adicionar contato")
+      .story("Dados inválidos");
     LOGIN_PAGE.hoverDropDownClicarEmComeceAqui()
     LOGIN_PAGE.preencherCampoNome('Teste')
     LOGIN_PAGE.preencherCampoEmail('batotadf60946@sunetoa.com')
