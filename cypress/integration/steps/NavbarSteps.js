@@ -103,7 +103,7 @@ context("NavBar", () => {
 
     it('Validar Busca usando filtros', () => {
       cy.allure()
-      .feature("Busca")
+      .feature("Filtro")
       .story("Dados válidos");
         NAVBAR_PAGE.preencherCampoDeBusca('notebook')
         NAVBAR_PAGE.clicarBtnBuscarLupa()
