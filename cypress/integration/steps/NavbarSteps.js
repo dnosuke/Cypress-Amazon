@@ -17,7 +17,6 @@ context("NavBar", () => {
       NAVBAR_PAGE.clicarBtnConfirmarCep();
 
       // ASSERTS
-
       NAVBAR_PAGE.validarCampoCepCadastrado("30710230")
   })
 
