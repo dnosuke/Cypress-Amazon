@@ -22,3 +22,6 @@ require("@shelex/cypress-allure-plugin");
 Cypress.on('uncaught:exception',(err, runnable) => {
   return false
 })
+Cypress.Screenshot.defaults({
+  screenshotOnRunFailure: false
+})
