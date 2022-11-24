@@ -1,10 +1,7 @@
 /// <reference types="cypress" />
 
-import BasePage from "../pages/BasePage";
 import NavBar from "../pages/NavbarPage";
 
-
-const BASE_PAGE = new BasePage();
 const NAVBAR_PAGE = new NavBar();
 
 context("NavBar", () => {
@@ -105,7 +102,47 @@ context("NavBar", () => {
 
 
     
-    //     ********FUNCIONALIDADE CARRINHO*********
+        // ********FUNCIONALIDADE CARRINHO*********
+
+    it('Validar adicionar produtos ao carrinho', () => {
+
+      NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
+      NAVBAR_PAGE.clicarBtnBuscarLupa()
+      NAVBAR_PAGE.clicarNoProduto()
+      NAVBAR_PAGE.clicarBtnAdicionarProdutoAoCarrinho()
+
+          
+            // ASSERTS
+
+      NAVBAR_PAGE.validarProdutoAdicionadoAoCarrinho()
+    })
 
 
+    it('Validar aumentar a quantidade desejada do produto adicionado ao carrinho', () => {
+
+      NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
+      NAVBAR_PAGE.clicarBtnBuscarLupa()
+      NAVBAR_PAGE.clicarNoProduto()
+      NAVBAR_PAGE.clicarBtnAdicionarProdutoAoCarrinho()
+      NAVBAR_PAGE.clicarBtnCarrinho()
+      NAVBAR_PAGE.clicarDropDownQuantidadeProdutos()
+      NAVBAR_PAGE.selecionarQuantidadeDeProdutosDesejado("4")
+
+      //   ASSERTS
+
+      NAVBAR_PAGE.validarQuantidadeDeProdutosCarrinho("4")
+    })
+
+    it('Validar redirecionamento para pagina de login ao finalizar pedido sem estar logado', () => {
+
+        NAVBAR_PAGE.preencherCampoDeBusca('suco laranja integral')
+        NAVBAR_PAGE.clicarBtnBuscarLupa()
+        NAVBAR_PAGE.clicarNoProduto()
+        NAVBAR_PAGE.clicarBtnAdicionarProdutoAoCarrinho()
+        NAVBAR_PAGE.clicarBtnFinalizarPedidoCarrinho()
+
+        //  ASSERTS
+
+        NAVBAR_PAGE.validarUrlLogin()
+    })
 });

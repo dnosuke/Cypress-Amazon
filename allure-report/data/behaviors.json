@@ -1,0 +1,96 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Validar cadastrar cep valido",
+    "uid" : "ec7241282e3126db",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669161350013,
+      "stop" : 1669161371921,
+      "duration" : 21908
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar Erro ao cadastrar cep invalido",
+    "uid" : "b13220e453162ecb",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669161372043,
+      "stop" : 1669161376373,
+      "duration" : 4330
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar Mensagem Error ao Fazer login com Email Invalido",
+    "uid" : "281c7aa2ff12a5ad",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669253513778,
+      "stop" : 1669253524477,
+      "duration" : 10699
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar Fazer login com dados valido",
+    "uid" : "f73195e0fd1d93fd",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669253524561,
+      "stop" : 1669253535618,
+      "duration" : 11057
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar mensagem de erro ao tentar criar conta com email ja cadastrado",
+    "uid" : "cd134f0f76f2cefe",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669253535704,
+      "stop" : 1669253545888,
+      "duration" : 10184
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar mensagem de erro ao tentar criar conta com senha menor que 6 caracteres",
+    "uid" : "b9ed3ce9442a4ece",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669253545935,
+      "stop" : 1669253555521,
+      "duration" : 9586
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Validar mensagem de error ao tentar criar conta confirmando senha diferente da senha inserida",
+    "uid" : "63366c13cdf6cfc6",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1669253555553,
+      "stop" : 1669253565788,
+      "duration" : 10235
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

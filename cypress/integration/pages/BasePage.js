@@ -51,6 +51,6 @@ export default class BasePage {
   }
 
   validarRedirecionarPagina(urlExpected) {
-    cy.url().should("equal", urlExpected);
+    cy.url().should("contain", urlExpected);
   }
 }

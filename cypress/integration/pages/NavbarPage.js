@@ -27,20 +27,24 @@ let resultadosBuscaUtilizandoFiltro = '.s-main-slot'
 let btnCarrinho = '#nav-cart'
 let msgCarrinhoVazio = '#sc-active-cart > div > div > div > h1'
 let campoSubtotalForaDoCarrinho = '#ewc-content > div.a-row.ewc-compact-head > div > div > div.a-row.ewc-subtotal > div.a-row.ewc-subtotal-value > span > span'
-let btnQuantidadeProdutosForaDoCarrinho = '#sc-item-82e254ae-830d-43bf-b449-34aa464c5cc8 > div.a-section.a-spacing-none.ewc-wider-compact-view-only.ewc-item-actions > div.a-row.ewc-qty-and-action-items > div.a-column.a-span8.a-text-center.a-spacing-mini.a-spacing-top-base.quantity-dropdown > span > span > span.a-declarative > span > span > select'
-let btnExcluirItemForaDoCarrinho = '#sc-item-82e254ae-830d-43bf-b449-34aa464c5cc8 > div.a-section.a-spacing-none.ewc-wider-compact-view-only.ewc-item-actions > div.a-row.ewc-qty-and-action-items > div.a-column.a-span4.a-text-center.a-spacing-mini.a-spacing-top-base.a-span-last > div > span > span > span > input'
-let btnAdicionarProdutoAoCarrinho = '/html/body/div[1]/div[3]/div[2]/div/div/div/div[2]/div/div[2]/div/ol/li[1]/div/div[3]/form/span/span/input'
+let produtoASerAdicionadoAoCarrinho = '[data-index="1"] > .sg-col-inner > .s-widget-container > [data-component-type="s-impression-logger"] > .s-featured-result-item > .s-card-container > .a-spacing-base > .s-product-image-container > .rush-component > .a-link-normal > .a-section > .s-image'
 let campoMsgNenhumItemSelecionadoCarrinho = '#sc-subtotal-label-activecart'
 let campoSubtotalValorProdutosCarrinho = '#sc-subtotal-amount-activecart > span'
 let btnExcluirProdutoCarrinho = '#sc-active-C8ca82ced-c696-497f-aaa6-aa5ad810d7dc > div.sc-list-item-content > div > div.a-column.a-span10 > div > div > div.a-fixed-left-grid-col.sc-product-details.a-col-right > div.a-row.sc-action-links > span.a-size-small.sc-action-delete > span > input'
 let btnFinalizarPedidoCarrinho = '#sc-buy-box-ptc-button > span > input'
 let avisoMsgErroAdicionarItensCarrinho = '#a-popover-content-1'
-
-
+let msgProdutoAdicionadoAoCarrinho = '#NATC_SMART_WAGON_CONF_MSG_SUCCESS > span'
+let btnDropdownQuantidadeProdutos = '[class="a-dropdown-label"]'
+let btnAdicionarProdutoAoCarrinho = '#add-to-cart-button'
+let campoQuantidadeDeProdutosCarrinho = '#activeCartViewForm > div.a-row.a-spacing-mini.sc-subtotal.sc-subtotal-activecart.sc-java-remote-feature'
 
 
 
 export default class NavbarPage {
+
+  validarUrlLogin() {
+    BASE_PAGE.validarRedirecionarPagina("https://www.amazon.com.br/ap/signin?")
+  }
 
   // FUNCIONALIDADE CEP
 
@@ -108,16 +112,12 @@ export default class NavbarPage {
     BASE_PAGE.click(btnCarrinho)
   }
 
-  clicarBtnQuantidadeProdutosForaDoCarrinho() {
-    BASE_PAGE.click(btnQuantidadeProdutosForaDoCarrinho)
-  }
-  
-  clicarBtnExcluirItemForaDoCarrinho() {
-    BASE_PAGE.click(btnExcluirItemForaDoCarrinho)
-  }
-
   clicarBtnAdicionarProdutoAoCarrinho() {
     BASE_PAGE.click(btnAdicionarProdutoAoCarrinho)
+  }
+
+  clicarNoProduto() {
+    BASE_PAGE.click(produtoASerAdicionadoAoCarrinho)
   }
 
   clicarBtnExcluirProdutoCarrinho() {
@@ -126,6 +126,18 @@ export default class NavbarPage {
 
   clicarBtnFinalizarPedidoCarrinho() {
     BASE_PAGE.click(btnFinalizarPedidoCarrinho)
+  }
+
+  clicarDropDownQuantidadeProdutos() {
+    BASE_PAGE.click(btnDropdownQuantidadeProdutos)
+  }
+
+  selecionarQuantidadeDeProdutosDesejado(value) {
+    BASE_PAGE.click(`#quantity_${value}`)
+  }
+
+  validarQuantidadeDeProdutosCarrinho(value) {
+    BASE_PAGE.validarText(campoQuantidadeDeProdutosCarrinho, `${value}`)
   }
 
   validarMsgCarrinhoVazio(text) {
@@ -146,5 +158,9 @@ export default class NavbarPage {
 
   validarMsgAdicionarItemAoCarrinho(text) {
     BASE_PAGE.validarText(avisoMsgErroAdicionarItensCarrinho, text)
+  }
+
+  validarProdutoAdicionadoAoCarrinho(){
+    BASE_PAGE.validarText(msgProdutoAdicionadoAoCarrinho, 'Adicionado ao carrinho')
   }
 }
